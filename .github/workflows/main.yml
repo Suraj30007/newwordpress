@@ -31,7 +31,7 @@ jobs:
         run: |
           # Securely transfer files to VPS
           # Use -o StrictHostKeyChecking=no to disable host key checking
-          scp -o StrictHostKeyChecking=no -r ./var/www/html/wordpress/newwordpress/* ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/var/www/html/wordpress/newwordpress
+          scp -o StrictHostKeyChecking=no -r ./var/www/html/wordpress/* ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/var/www/html/wordpress/newwordpress
 
       - name: Cleanup
         run: |
