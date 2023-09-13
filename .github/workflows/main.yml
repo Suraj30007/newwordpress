@@ -30,9 +30,8 @@ jobs:
       - name: Deploy to VPS
         run: |
           # Securely transfer files to VPS
-          scp -r ./var/www/html/wordpress/newwordpress/* ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/var/www/html/wordpress/newwordpress
+          scp -o StrictHostKeyChecking=no -r ./var/www/html/wordpress/newwordpress/* ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/var/www/html/wordpress/newwordpress
 
       - name: Cleanup
         run: |
           # cleanup steps
-
